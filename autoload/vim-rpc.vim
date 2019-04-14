@@ -14,11 +14,11 @@ endif
 
 let g:vim_rpc = 1
 
-function vimrpc#version()
+function! vimrpc#version()
 	return '0.1.0'
 endfunction
 
-function vimrpc#run()
+function! vimrpc#run()
 python3 << endPython
 
 import vim
@@ -59,10 +59,10 @@ t.start()
 endPython
 endfunction
 
-function vimrpc#stop()
+function! vimrpc#stop()
 python3 << endPython
 	runThread = False
 endPython
 endfunction
 
-call vimrpc()
+call vimrpc#run()
